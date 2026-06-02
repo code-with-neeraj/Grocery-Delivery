@@ -1,4 +1,3 @@
-import { Product } from './../generated/prisma/client';
 import { Request, Response } from "express";
 import { prisma } from "../config/prisma.js";
 import { inngest } from "../inngest/index.js";
