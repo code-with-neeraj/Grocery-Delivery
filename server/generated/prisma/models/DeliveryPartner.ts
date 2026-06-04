@@ -185,7 +185,7 @@ export type DeliveryPartnerGroupByOutputType = {
   phone: string
   avatar: string | null
   vehicleType: string | null
-  isActive: boolean | null
+  isActive: boolean
   createdAt: Date
   updatedAt: Date
   _count: DeliveryPartnerCountAggregateOutputType | null
@@ -219,7 +219,7 @@ export type DeliveryPartnerWhereInput = {
   phone?: Prisma.StringFilter<"DeliveryPartner"> | string
   avatar?: Prisma.StringNullableFilter<"DeliveryPartner"> | string | null
   vehicleType?: Prisma.StringNullableFilter<"DeliveryPartner"> | string | null
-  isActive?: Prisma.BoolNullableFilter<"DeliveryPartner"> | boolean | null
+  isActive?: Prisma.BoolFilter<"DeliveryPartner"> | boolean
   createdAt?: Prisma.DateTimeFilter<"DeliveryPartner"> | Date | string
   updatedAt?: Prisma.DateTimeFilter<"DeliveryPartner"> | Date | string
   orders?: Prisma.OrderListRelationFilter
@@ -233,7 +233,7 @@ export type DeliveryPartnerOrderByWithRelationInput = {
   phone?: Prisma.SortOrder
   avatar?: Prisma.SortOrderInput | Prisma.SortOrder
   vehicleType?: Prisma.SortOrderInput | Prisma.SortOrder
-  isActive?: Prisma.SortOrderInput | Prisma.SortOrder
+  isActive?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
   orders?: Prisma.OrderOrderByRelationAggregateInput
@@ -250,7 +250,7 @@ export type DeliveryPartnerWhereUniqueInput = Prisma.AtLeast<{
   phone?: Prisma.StringFilter<"DeliveryPartner"> | string
   avatar?: Prisma.StringNullableFilter<"DeliveryPartner"> | string | null
   vehicleType?: Prisma.StringNullableFilter<"DeliveryPartner"> | string | null
-  isActive?: Prisma.BoolNullableFilter<"DeliveryPartner"> | boolean | null
+  isActive?: Prisma.BoolFilter<"DeliveryPartner"> | boolean
   createdAt?: Prisma.DateTimeFilter<"DeliveryPartner"> | Date | string
   updatedAt?: Prisma.DateTimeFilter<"DeliveryPartner"> | Date | string
   orders?: Prisma.OrderListRelationFilter
@@ -264,7 +264,7 @@ export type DeliveryPartnerOrderByWithAggregationInput = {
   phone?: Prisma.SortOrder
   avatar?: Prisma.SortOrderInput | Prisma.SortOrder
   vehicleType?: Prisma.SortOrderInput | Prisma.SortOrder
-  isActive?: Prisma.SortOrderInput | Prisma.SortOrder
+  isActive?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
   _count?: Prisma.DeliveryPartnerCountOrderByAggregateInput
@@ -283,7 +283,7 @@ export type DeliveryPartnerScalarWhereWithAggregatesInput = {
   phone?: Prisma.StringWithAggregatesFilter<"DeliveryPartner"> | string
   avatar?: Prisma.StringNullableWithAggregatesFilter<"DeliveryPartner"> | string | null
   vehicleType?: Prisma.StringNullableWithAggregatesFilter<"DeliveryPartner"> | string | null
-  isActive?: Prisma.BoolNullableWithAggregatesFilter<"DeliveryPartner"> | boolean | null
+  isActive?: Prisma.BoolWithAggregatesFilter<"DeliveryPartner"> | boolean
   createdAt?: Prisma.DateTimeWithAggregatesFilter<"DeliveryPartner"> | Date | string
   updatedAt?: Prisma.DateTimeWithAggregatesFilter<"DeliveryPartner"> | Date | string
 }
@@ -296,7 +296,7 @@ export type DeliveryPartnerCreateInput = {
   phone: string
   avatar?: string | null
   vehicleType?: string | null
-  isActive?: boolean | null
+  isActive?: boolean
   createdAt?: Date | string
   updatedAt?: Date | string
   orders?: Prisma.OrderCreateNestedManyWithoutDeliveryPartnerInput
@@ -310,7 +310,7 @@ export type DeliveryPartnerUncheckedCreateInput = {
   phone: string
   avatar?: string | null
   vehicleType?: string | null
-  isActive?: boolean | null
+  isActive?: boolean
   createdAt?: Date | string
   updatedAt?: Date | string
   orders?: Prisma.OrderUncheckedCreateNestedManyWithoutDeliveryPartnerInput
@@ -324,7 +324,7 @@ export type DeliveryPartnerUpdateInput = {
   phone?: Prisma.StringFieldUpdateOperationsInput | string
   avatar?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   vehicleType?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  isActive?: Prisma.NullableBoolFieldUpdateOperationsInput | boolean | null
+  isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   orders?: Prisma.OrderUpdateManyWithoutDeliveryPartnerNestedInput
@@ -338,7 +338,7 @@ export type DeliveryPartnerUncheckedUpdateInput = {
   phone?: Prisma.StringFieldUpdateOperationsInput | string
   avatar?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   vehicleType?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  isActive?: Prisma.NullableBoolFieldUpdateOperationsInput | boolean | null
+  isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   orders?: Prisma.OrderUncheckedUpdateManyWithoutDeliveryPartnerNestedInput
@@ -352,7 +352,7 @@ export type DeliveryPartnerCreateManyInput = {
   phone: string
   avatar?: string | null
   vehicleType?: string | null
-  isActive?: boolean | null
+  isActive?: boolean
   createdAt?: Date | string
   updatedAt?: Date | string
 }
@@ -365,7 +365,7 @@ export type DeliveryPartnerUpdateManyMutationInput = {
   phone?: Prisma.StringFieldUpdateOperationsInput | string
   avatar?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   vehicleType?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  isActive?: Prisma.NullableBoolFieldUpdateOperationsInput | boolean | null
+  isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
@@ -378,7 +378,7 @@ export type DeliveryPartnerUncheckedUpdateManyInput = {
   phone?: Prisma.StringFieldUpdateOperationsInput | string
   avatar?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   vehicleType?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  isActive?: Prisma.NullableBoolFieldUpdateOperationsInput | boolean | null
+  isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
@@ -451,7 +451,7 @@ export type DeliveryPartnerCreateWithoutOrdersInput = {
   phone: string
   avatar?: string | null
   vehicleType?: string | null
-  isActive?: boolean | null
+  isActive?: boolean
   createdAt?: Date | string
   updatedAt?: Date | string
 }
@@ -464,7 +464,7 @@ export type DeliveryPartnerUncheckedCreateWithoutOrdersInput = {
   phone: string
   avatar?: string | null
   vehicleType?: string | null
-  isActive?: boolean | null
+  isActive?: boolean
   createdAt?: Date | string
   updatedAt?: Date | string
 }
@@ -493,7 +493,7 @@ export type DeliveryPartnerUpdateWithoutOrdersInput = {
   phone?: Prisma.StringFieldUpdateOperationsInput | string
   avatar?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   vehicleType?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  isActive?: Prisma.NullableBoolFieldUpdateOperationsInput | boolean | null
+  isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
@@ -506,7 +506,7 @@ export type DeliveryPartnerUncheckedUpdateWithoutOrdersInput = {
   phone?: Prisma.StringFieldUpdateOperationsInput | string
   avatar?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   vehicleType?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  isActive?: Prisma.NullableBoolFieldUpdateOperationsInput | boolean | null
+  isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
@@ -617,7 +617,7 @@ export type $DeliveryPartnerPayload<ExtArgs extends runtime.Types.Extensions.Int
     phone: string
     avatar: string | null
     vehicleType: string | null
-    isActive: boolean | null
+    isActive: boolean
     createdAt: Date
     updatedAt: Date
   }, ExtArgs["result"]["deliveryPartner"]>

@@ -2,9 +2,11 @@ import { useEffect, useEffectEvent, useState } from "react"
 import type { Order } from "../types"
 import { Link, useSearchParams } from "react-router-dom"
 import { useCart } from "../context/CartContext"
-import { dummyDashboardOrdersData, statusColors } from "../assets/assets"
+import { statusColors } from "../assets/assets"
 import Loading from "../components/Loading"
 import { CalendarIcon, ChevronRightIcon, PackageIcon } from "lucide-react"
+import api from "../config/api"
+import toast from "react-hot-toast"
 
 
 const MYOrders = () => {
@@ -21,8 +23,16 @@ const MYOrders = () => {
   const {clearCart} = useCart()
 
   const fetchOrders = async () => {
-    setOrders(dummyDashboardOrdersData as any)
-    setLoading(false)
+    setLoading(true)
+    try {
+      const params = activeTab !== "all" ? `?status=${activeTab}` : "";
+      const {data} = await api.get(`/orders${params}`)
+      setOrders(data.orders)
+    } catch (error: any) {
+      toast.error(error?.response?.data?.message || error?.message);
+    } finally{
+      setLoading(false)
+    }
   }
 
   useEffect(() => {
@@ -67,12 +77,12 @@ const MYOrders = () => {
           ) : (
             <div className="space-y-4">
               {orders.map((order)=>(
-                <Link to={`/orders/${order._id}`} key={order._id} className="block max-w-4xl bg-white rounded-2xl p-5 hover:shadow transition-all">
+                <Link to={`/orders/${order.id}`} key={order.id} className="block max-w-4xl bg-white rounded-2xl p-5 hover:shadow transition-all">
                   {/* Order id, date & status  */}
                   <div className="flex items-start justify-between mb-3">
                     {/* left  */}
                     <div>
-                      <p className="text-sm font-medium text-app-green">Order #{order._id.slice(-8).toLocaleUpperCase()}</p>
+                      <p className="text-sm font-medium text-app-green">Order #{order.id.slice(-8).toLocaleUpperCase()}</p>
                       <div className="flex items-center gap-2 mt-1">
                         <CalendarIcon className="size-3 text-app-text-light"/>
                         <span className="text-xs text-app-text-light">{new Date(order.createdAt).toLocaleDateString("en-IN", {month: "short", day: "numeric", year: "numeric"})}</span>

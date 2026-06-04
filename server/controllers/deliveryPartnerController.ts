@@ -45,7 +45,7 @@ export const loginPartner = async (req:Request, res: Response) => {
 export const getMYDeliveries = async (req:Request, res: Response) => {
     const { status } = req.query;
 
-    const where: any = {deliverypartnerId: req.partner!.id};
+    const where: any = {deliveryPartnerId: req.partner!.id};
 
     if(status === "active"){
         where.status = {in: ["Assigned", "Packed", "Out for Delivery"]}
