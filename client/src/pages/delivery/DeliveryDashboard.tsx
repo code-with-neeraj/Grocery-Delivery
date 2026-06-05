@@ -14,7 +14,6 @@ const getAuthHeaders = ()=>({
     headers: {Authorization: `Bearer ${localStorage.getItem("delivery_token")}`}
 })
 
-//15:41:56 order show nahi ho raha hai 
 
 export default function DeliveryDashboard() {
 
@@ -31,7 +30,7 @@ export default function DeliveryDashboard() {
     // Cancel modal
     const [cancelModal, setCancelModal] = useState<string | null>(null);
     const [cancelReason, setCancelReason] = useState("");
-    const watchRef = useRef<number | null>(null)
+    const watchIdRef = useRef<number | null>(null)
 
     const fetchOrders = async () => {
         setLoading(true);
@@ -54,17 +53,17 @@ export default function DeliveryDashboard() {
         const activeOrders = orders.filter((o)=> ["Assigned", "Packed", "Out for Delivery"].includes(o.status))
 
         if(activeOrders.length === 0 || !tracking){
-            if(watchRef.current !== null){
-                navigator.geolocation.clearWatch(watchRef.current);
-                watchRef.current = null;
+            if(watchIdRef.current !== null){
+                navigator.geolocation.clearWatch(watchIdRef.current);
+                watchIdRef.current = null;
             
             }
             return;
         }
         const sendLocation = (pos: GeolocationPosition)=>{
             const {latitude: lat, longitude: lng} = pos.coords;
-            activeOrders.forEach(()=>{
-                axios.put(`${API_URL}/delivery/my-deliveriess/${orders.id}/location`, {lat, lng}, getAuthHeaders()).catch(()=>{})
+            activeOrders.forEach((order)=>{
+                axios.put(`${API_URL}/delivery/my-deliveries/${order.id}/location`, {lat, lng}, getAuthHeaders()).catch(()=>{})
             });
         }
 

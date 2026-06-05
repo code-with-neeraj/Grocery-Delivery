@@ -5,8 +5,6 @@ import Loading from "../../components/Loading";
 import api from "../../config/api";
 import toast from "react-hot-toast";
 
-// 15:24;58
-//update nahi ho rha hai delivery deac button
 
 export default function AdminDeliveryPartners() {
     const [partners, setPartners] = useState<DeliveryPartner[]>([]);

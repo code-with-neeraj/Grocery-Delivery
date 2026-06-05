@@ -3,7 +3,7 @@ import type { CartItem, Product } from "../types";
 
 
 interface CartContextType{
-    item: CartItem[];
+    items: CartItem[];
     addToCart: (product: Product, quantity?: number)=> void;
     removeFromCart: (productId: string)=> void;
     updateQuantity: (productId: string, quantity: number)=> void;
@@ -76,8 +76,9 @@ export function CartProvider({children} : {children : ReactNode}){
 
 export function useCart(){
     const context = useContext(CartContext)
-    if(!context) throw new Error("UseCArt must be")
-
+    if (!context) {
+    throw new Error("useCart must be used within CartProvider");
+    }
     return context
 
 }

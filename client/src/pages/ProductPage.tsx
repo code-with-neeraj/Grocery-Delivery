@@ -2,7 +2,6 @@ import { Link, useNavigate, useParams } from "react-router-dom"
 import { useCart } from "../context/CartContext"
 import { useEffect, useState } from "react"
 import type { Product } from "../types"
-import { dummyProducts } from "../assets/assets"
 import Loading from "../components/Loading"
 import { ArrowLeftIcon, ArrowRightIcon, HomeIcon, LeafIcon, MinusIcon, PlusIcon, ShoppingCartIcon, StarIcon } from "lucide-react"
 import DummyReviewsSection from "../assets/DummyReviewsSection"
@@ -23,12 +22,11 @@ const ProductPage = () => {
   const [localQuantity, setLocalQuantity] = useState(1)
 
   useEffect(() => {
-    setLoading(true)
-    setLocalQuantity(1);
     window.scrollTo(0,0)
-
+    
     api.get(`/products/${id}`).then(({data})=>{
       setProduct(data.product);
+      setLocalQuantity(1);
       return api.get(`/products?category=${data.product.category}`)
     }).then(({data})=>{
       setRelatedProducts(data.products.filter((p: Product) => p.id !==id))
