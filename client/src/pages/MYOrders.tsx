@@ -1,4 +1,4 @@
-import { useEffect, useEffectEvent, useState } from "react"
+import { useEffect, useState } from "react"
 import type { Order } from "../types"
 import { Link, useSearchParams } from "react-router-dom"
 import { useCart } from "../context/CartContext"
