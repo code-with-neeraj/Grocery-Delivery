@@ -46,12 +46,12 @@ export const deliveryPartnerLoginImage = "https://images.unsplash.com/photo-1610
 
 export const appPromoBannerData = {
     title: "Get fresh groceries in minutes",
-    description: "Download the Instacart app for exclusive deals, real-time tracking, and the freshest selection delivered right to your door.",
+    description: "Download the Abhicart app for exclusive deals, real-time tracking, and the freshest selection delivered right to your door.",
 };
 
 export const footerData = {
     brand: {
-        name: "Instacart",
+        name: "Abhicart",
         description: "Bringing fresh, organic groceries straight from local farms to your doorstep. Nourish your home with Earth's finest.",
         socials: [
             { icon: SiFacebook, link: "#" },
@@ -82,13 +82,13 @@ export const footerData = {
     ],
 
     contact: [
-        { icon: MapPinIcon, text: "123 Green Valley Rd, Portland" },
-        { icon: PhoneIcon, text: "+1 (111) 123-4567" },
-        { icon: MailIcon, text: "hello@example.com" },
+        { icon: MapPinIcon, text: "123 Chapra Rd, Saran" },
+        { icon: PhoneIcon, text: "+91 7277959834" },
+        { icon: MailIcon, text: "abhicart@example.com" },
     ],
 
     bottom: {
-        copyright: "© 2026 Greatstack. All rights reserved.",
+        copyright: "© 2026 Abhicart. All rights reserved.",
         links: [
             { label: "Privacy Policy", href: "#" },
             { label: "Terms of Service", href: "#" },

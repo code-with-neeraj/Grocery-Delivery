@@ -11,6 +11,7 @@ const Login = () => {
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
   const [loading, setLoading] = useState(false)
+  const [showDeliveryLogin, setShowDeliveryLogin] = useState(false);
 
   const {login, register} = useAuth()
 
@@ -48,13 +49,17 @@ const Login = () => {
           <div className='text-center mb-8'>
             <Link to="/" className='inline-flex items-center gap-2 mb-6'>
               <BikeIcon  className='size-8 text-app-green'/>
-              <span className='text-2xl font-semibold text-app-green'>Instacart</span>
+              <span className='text-2xl font-semibold text-app-green'>Abhicart</span>
             </Link>
             <h1 className='text-2xl font-semibold text-app-green mb-2'>{isLoginState ? "Sign in to your account" : "Sign up for an account"}</h1>
             <p className='text-sm text-app-text-light'>{isLoginState ? "Don't have an account" : "Already have an account"} 
               <button onClick={()=>setIsLoginState(!isLoginState)} className='text-orange-500 ml-1 font-semibold hover:text-orange-600 transition-colors'>
                 {isLoginState ? "Create one" : "Sign in"}
-                </button></p>
+                </button>
+            </p>
+            
+
+
           </div>
 
           {/* Login / Register Form  */}
@@ -87,10 +92,9 @@ const Login = () => {
                 {loading ? <Loader2Icon className='animate-spin'/> : isLoginState ? "Sign In" : "Sign Up"}
               </button>
           </form>
-        </div>
-
+          <p className='text-sm text-app-text-light  p-2'>Login for delivery partner access <span className='text-orange-500 ml-1 font-semibold hover:text-orange-600 transition-colors'><Link to="/delivery">here</Link></span></p>
+        </div>  
       </div>
-
     </div>
   )
 }

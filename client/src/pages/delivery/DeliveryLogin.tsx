@@ -3,7 +3,7 @@ import { BikeIcon } from "lucide-react";
 import { heroSectionData } from "../../assets/assets";
 import api from "../../config/api";
 import toast from "react-hot-toast";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function DeliveryLogin() {
 
@@ -52,7 +52,7 @@ export default function DeliveryLogin() {
                     <div className="text-center mb-8">
                         <div className="flex-center gap-2 mb-4">
                             <BikeIcon className="size-7 text-app-green" />
-                            <span className="text-2xl font-semibold text-app-green">Instacart</span>
+                            <span className="text-2xl font-semibold text-app-green">Abhicart</span>
                         </div>
                         <h1 className="text-2xl font-semibold text-app-green mb-2">Delivery Partner Login</h1>
                         <p className="text-sm text-app-text-light">Sign in to manage your deliveries</p>
@@ -71,6 +71,7 @@ export default function DeliveryLogin() {
                             {loading ? "Signing in..." : "Sign In"}
                         </button>
                     </form>
+                    <p className='text-sm text-app-text-light  p-2'>Login for users access <span className='text-orange-500 ml-1 font-semibold hover:text-orange-600 transition-colors'><Link to="/login">here</Link></span></p>
                 </div>
             </div>
         </div>
