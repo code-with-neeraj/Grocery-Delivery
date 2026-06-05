@@ -1,4 +1,3 @@
-import { Category } from './../../client/src/types/index';
 import { Request, Response } from "express";
 import { prisma } from "../config/prisma.js";
 
