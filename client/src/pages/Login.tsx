@@ -11,7 +11,6 @@ const Login = () => {
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
   const [loading, setLoading] = useState(false)
-  const [showDeliveryLogin, setShowDeliveryLogin] = useState(false);
 
   const {login, register} = useAuth()
 
