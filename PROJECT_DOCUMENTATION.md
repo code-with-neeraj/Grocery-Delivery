@@ -1,12 +1,13 @@
-# Abhicart - Grocery Delivery Platform
+# SwiftCart - Grocery Delivery Platform
 
 ## Cover Page
 
-**Project Title:** Abhicart - Grocery Delivery Platform
+**Project Title:** SwiftCart
+ - Grocery Delivery Platform
 
-**Submitted By:** Abhishek Kumar
+**Submitted By:** Neeraj Kumar
 
-**Degree:** Bachelor of Computer Applications / Master of Computer Applications
+**Degree:**  Master of Computer Applications
 
 **Department:** Computer Science
 
@@ -20,7 +21,7 @@
 
 ## Certificate
 
-This is to certify that the project titled **"Abhicart - Grocery Delivery Platform"** submitted by **Abhishek Kumar** in partial fulfillment of the requirements for the award of the degree of **BCA / MCA** is an original work carried out by him under my supervision.
+This is to certify that the project titled **"SwiftCart- Grocery Delivery Platform"** submitted by **Neeraj Kumar** in partial fulfillment of the requirements for the award of the degree of **MCA** is an original work carried out by him under my supervision.
 
 **Project Guide:** _______________________________
 
@@ -32,9 +33,9 @@ This is to certify that the project titled **"Abhicart - Grocery Delivery Platfo
 
 ## Declaration
 
-I hereby declare that the project report entitled **"Abhicart - Grocery Delivery Platform"** submitted to **[Institution Name]** is my own original work and has been carried out by me under the guidance of **[Supervisor Name]**. The work has not been submitted earlier, either in part or in full, to any other University or Institution for the award of any other degree.
+I hereby declare that the project report entitled **"SwiftCart - Grocery Delivery Platform"** submitted to **[Institution Name]** is my own original work and has been carried out by me under the guidance of **[Supervisor Name]**. The work has not been submitted earlier, either in part or in full, to any other University or Institution for the award of any other degree.
 
-**Name:** Abhishek Kumar
+**Name:** Neeraj Kumar
 
 **Signature:** ______________________
 
@@ -52,7 +53,7 @@ My special thanks to my family and friends for their patience and motivation dur
 
 ## Abstract
 
-The Abhicart Grocery Delivery Platform is a modern, full-stack web solution designed to enable online grocery shopping, order management, and delivery coordination. It integrates a React-based frontend with a Node.js and Express backend, using PostgreSQL managed by Prisma ORM for data persistence. The system supports role-based access with JWT authentication for customers, administrators, and delivery partners.
+The SwiftCart Grocery Delivery Platform is a modern, full-stack web solution designed to enable online grocery shopping, order management, and delivery coordination. It integrates a React-based frontend with a Node.js and Express backend, using PostgreSQL managed by Prisma ORM for data persistence. The system supports role-based access with JWT authentication for customers, administrators, and delivery partners.
 
 The platform offers product listing, search, category filtering, shopping cart management, checkout with Stripe payment integration, address management, order tracking, and delivery updates. The administrative interface enables product management, delivery partner management, order assignment, and system analytics. The delivery partner workflow supports login, active delivery tracking, location updates, status changes, OTP delivery confirmation, and cancellations.
 
@@ -121,7 +122,7 @@ The project also includes Cloudinary-powered image upload, Inngest-based backgro
 
 ## 7. Introduction
 
-Abhicart is a grocery delivery platform built to provide a complete shopping experience for customers, administrators, and delivery partners. The system combines a responsive React user interface with a robust Node.js and Express backend, backed by PostgreSQL and Prisma ORM.
+SwiftCart is a grocery delivery platform built to provide a complete shopping experience for customers, administrators, and delivery partners. The system combines a responsive React user interface with a robust Node.js and Express backend, backed by PostgreSQL and Prisma ORM.
 
 The platform supports the entire grocery commerce lifecycle from browsing products to placing orders and monitoring delivery. It also includes administrative capabilities for managing inventory and delivery resources.
 
@@ -131,7 +132,8 @@ The platform supports the entire grocery commerce lifecycle from browsing produc
 
 Traditional brick-and-mortar grocery stores present inconvenience due to physical travel, time constraints, and limited product availability. Customers often face difficulty managing multiple addresses, tracking orders, and ensuring secure payment.
 
-The problem addressed by Abhicart is the need for a digital solution that provides:
+The problem addressed by SwiftCart
+ is the need for a digital solution that provides:
 
 - Easy access to grocery catalogs
 - Category-based search and product filtering
@@ -143,7 +145,8 @@ The problem addressed by Abhicart is the need for a digital solution that provid
 
 ## 9. Objectives
 
-The main objectives of the Abhicart project are:
+The main objectives of the SwiftCart
+ project are:
 
 1. Implement a user-friendly grocery shopping interface with product browsing and search.
 2. Provide secure JWT-based authentication for customers, admins, and delivery partners.
@@ -158,7 +161,8 @@ The main objectives of the Abhicart project are:
 
 ## 10. Scope of the Project
 
-The scope of Abhicart includes:
+The scope of SwiftCart
+ includes:
 
 - Customer registration and login
 - Product listing with categories, search, and flash deals
@@ -190,7 +194,7 @@ Existing grocery ordering systems often provide limited features or require manu
 
 ## 12. Proposed System
 
-Abhicart proposes a modern web-based grocery delivery system with:
+SwiftCart proposes a modern web-based grocery delivery system with:
 
 - A customer-facing storefront with search and filtering
 - Secure JWT authentication and session persistence
@@ -274,7 +278,8 @@ This system provides stronger automation and more complete delivery lifecycle ma
 
 ## 16. System Architecture
 
-Abhicart follows a standard three-tier architecture:
+SwiftCart
+ follows a standard three-tier architecture:
 
 - **Presentation Layer:** React application served by Vite. Handles routing, user interface, authentication state, and business flows.
 - **Application Layer:** Node.js + Express API server. Implements authentication, product management, order processing, address management, delivery partner workflows, and admin services.
@@ -301,7 +306,8 @@ External integrations:
 
 ## 17. Project Workflow
 
-The Abhicart workflow includes the following major processes:
+The SwiftCart
+ workflow includes the following major processes:
 
 1. **User Onboarding:** User registers or logs in through `/login`.
 2. **Product Browsing:** User searches, filters, and selects products.
@@ -354,7 +360,8 @@ rectangle System {
 ```plantuml
 @startuml
 start
-:User opens Abhicart;
+:User opens SwiftCart
+;
 :Login or Register;
 if (Logged in?) then (yes)
   :Browse products;
@@ -497,7 +504,8 @@ Order }o--|| Address : ships_to
 
 ### All Tables
 
-The Abhicart database uses the following tables defined in `server/prisma/schema.prisma`:
+The SwiftCart
+ database uses the following tables defined in `server/prisma/schema.prisma`:
 
 - `User`
 - `Address`
@@ -784,8 +792,8 @@ This module enables delivery partner operations.
 - Request Body:
 ```json
 {
-  "name": "Abhishek Kumar",
-  "email": "abhishek@example.com",
+  "name": "Neeraj Kumar",
+  "email": "neeraj@example.com",
   "password": "strongpassword"
 }
 ```
@@ -796,8 +804,8 @@ This module enables delivery partner operations.
 {
   "user": {
     "id": "uuid",
-    "name": "Abhishek Kumar",
-    "email": "abhishek@example.com",
+    "name": "Neeraj Kumar",
+    "email": "neeraj@example.com",
     "phone": "",
     "avatar": "",
     "addresses": [],
@@ -816,7 +824,7 @@ This module enables delivery partner operations.
 - Request Body:
 ```json
 {
-  "email": "abhishek@example.com",
+  "email": "neeraj@example.com",
   "password": "strongpassword"
 }
 ```
@@ -827,8 +835,8 @@ This module enables delivery partner operations.
 {
   "user": {
     "id": "uuid",
-    "name": "Abhishek Kumar",
-    "email": "abhishek@example.com",
+    "name": "Neeraj Kumar",
+    "email": "neeraj@example.com",
     "phone": "",
     "avatar": "",
     "addresses": [],
@@ -1760,7 +1768,7 @@ Recommended integration tests include:
 
 ## 36. Conclusion
 
-Abhicart delivers a practical grocery delivery platform with comprehensive functionality for customers, administrators, and delivery partners. The application demonstrates a real-world full-stack implementation using React, Node.js, Express, PostgreSQL, Prisma, Stripe, Cloudinary, and Inngest.
+SwiftCart delivers a practical grocery delivery platform with comprehensive functionality for customers, administrators, and delivery partners. The application demonstrates a real-world full-stack implementation using React, Node.js, Express, PostgreSQL, Prisma, Stripe, Cloudinary, and Inngest.
 
 This documentation captures the project architecture, workflow, database design, module responsibilities, API structure, and important implementation details. It also identifies current limitations and suggests future improvements for a polished final submission.
 
@@ -1794,7 +1802,7 @@ This documentation captures the project architecture, workflow, database design,
 
 ## 39. Contributors
 
-- Abhishek Kumar — Full Stack Development, System Design, Documentation
+- Neeraj Kumar — Full Stack Development, System Design, Documentation
 
 ---
 

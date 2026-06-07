@@ -60,13 +60,26 @@ export const getProduct = async (req: Request, res: Response) => {
     res.json({product: {...product, discount}})
 }
 
-// POST /api/products
 export const createProduct = async (req: Request, res: Response) => {
-    const product = await prisma.product.create({data: req.body})
-    res.status(201).json({product})
-}
+  try {
+    console.log("BODY:", req.body);
 
-// POST /api/products:id
+    const product = await prisma.product.create({
+      data: req.body,
+    });
+
+    res.status(201).json({ product });
+  } catch (error: any) {
+    console.error("CREATE PRODUCT ERROR:", error);
+
+    res.status(500).json({
+      success: false,
+      message: error.message,
+    });
+  }
+};
+
+// PUT /api/products/:id
 export const updateProduct = async (req: Request, res: Response) => {
     const product = await prisma.product.update({where: {id: req.params.id as string}, data: req.body})
     res.json({product})

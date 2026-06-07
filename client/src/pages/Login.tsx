@@ -36,7 +36,7 @@ const Login = () => {
       <div className='hidden lg:flex lg:w-1/2 bg-app-green relative items-center justify-center'>
         <img src={heroSectionData.hero_image} alt="hero image"  className='absolute inset-0 object-cover h-full bg-center opacity-10'/>
         <div className='relative text-center px-12'>
-          <h2 className='text-4xl font-semibold text-white mb-4'>Welcome back to Instacard</h2>
+          <h2 className='text-4xl font-semibold text-white mb-4'>Welcome back to SwiftCart</h2>
           <p className='text-white/60 font-serif text-xl max-w-sm mx-auto'>Fresh groceriess and organic produce, delivered to your doorstep.</p>
         </div>
       </div>
@@ -48,7 +48,7 @@ const Login = () => {
           <div className='text-center mb-8'>
             <Link to="/" className='inline-flex items-center gap-2 mb-6'>
               <BikeIcon  className='size-8 text-app-green'/>
-              <span className='text-2xl font-semibold text-app-green'>Abhicart</span>
+              <span className='text-2xl font-semibold text-app-green'>SwiftCart</span>
             </Link>
             <h1 className='text-2xl font-semibold text-app-green mb-2'>{isLoginState ? "Sign in to your account" : "Sign up for an account"}</h1>
             <p className='text-sm text-app-text-light'>{isLoginState ? "Don't have an account" : "Already have an account"} 
@@ -83,7 +83,7 @@ const Login = () => {
                 Password
                 <div className='relative'>
                   <LockIcon  className='absolute left-3.5 top-1/2 -translate-y-1/2 size-4 text-app-text-light'/>
-                  <input type='password' value={password} onChange={(e) =>setPassword(e.target.value)} required placeholder='&#x387;&#x387;&#x387;&#x387;&#x387;&#x387;' className='w-full pl-11 pr-4 py-3 text-sm bg-white rounded-xl border not-focus:border-app-border transition-all'/>
+                  <input type='password' value={password} onChange={(e) =>setPassword(e.target.value)} required placeholder='•••••••' className='w-full pl-11 pr-4 py-3 text-sm bg-white rounded-xl border not-focus:border-app-border transition-all'/>
                 </div>
               </label>
 

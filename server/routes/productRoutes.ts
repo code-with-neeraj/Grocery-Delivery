@@ -8,8 +8,9 @@ const productRouter = express.Router();
 productRouter.get("/flash-deals",getFlashDeals);
 productRouter.get("/",getProducts);
 productRouter.get("/:id",getProduct);
-productRouter.post("/",auth, admin,createProduct);
-productRouter.post("/:id",auth, admin,updateProduct);
+productRouter.post("/", auth, admin, createProduct);
+// Use PUT for updates to match frontend (api.put(...))
+productRouter.put("/:id", auth, admin, updateProduct);
 productRouter.delete("/:id",auth, admin,deleteProduct);
 
 export default productRouter;

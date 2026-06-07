@@ -21,6 +21,9 @@ import AdminDeliveryPartners from "./pages/admin/AdminDeliveryPartners"
 import DeliveryLogin from "./pages/delivery/DeliveryLogin"
 import DeliveryLayout from "./pages/delivery/DeliveryLayout"
 import DeliveryDashboard from "./pages/delivery/DeliveryDashboard"
+import HelpCenter from "./pages/HelpCenter"
+import PrivacyPolicy from "./pages/PrivacyPolicy"
+import MyAccount from "./pages/MyAccount"
 
 
 const App = () => {
@@ -40,12 +43,15 @@ const App = () => {
             <Route path="products/:id" element={<ProductPage />} />
             <Route path="search" element={<SearchResults />} />
             <Route path="deals" element={<FlashDeals />} />
+            <Route path="help" element={<HelpCenter />} />
+            <Route path="privacy" element={<PrivacyPolicy />} />
 
             <Route element={<ProtectedRoute />}>
               <Route path="checkout" element={<CheckOut />} />
               <Route path="orders" element={<MYOrders />} />
               <Route path="orders/:id" element={<OrderTracking />} />
               <Route path="addresses" element={<Addresses />} />
+              <Route path="my-account" element={<MyAccount />} />
             </Route>
         </Route>
         {/* Admin Pages  */}

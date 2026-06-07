@@ -1,7 +1,6 @@
 import { Request, Response } from "express";
 import { prisma } from "../config/prisma.js";
 import  bcrypt  from 'bcrypt';
-import { timeStamp } from "node:console";
 
 
 

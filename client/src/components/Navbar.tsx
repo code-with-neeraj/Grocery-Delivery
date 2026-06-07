@@ -32,7 +32,8 @@ const Navbar = () => {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16 gap-4">
                 {/* Logo  */}
                 <Link to='/' className="flex items-center gap-2 text-[22px] font-medium shrink-0">
-                    <BikeIcon size={24} /> Abhicart
+                    <BikeIcon size={24} /> SwiftCart
+
                 </Link>
                 <div className="w-full flex items-center justify-end gap-4 lg:gap-10">
                     {/* Nav Links - Desktop  */}
@@ -92,6 +93,7 @@ const Navbar = () => {
 
                                             {user && <Link to="/addresses" className="dropdown-link"><MapPinIcon size={16}/>Addresses</Link>}
 
+                                            <Link to="/my-account" className="dropdown-link"><UserIcon size={16}/>My Account</Link>
                                             <Link to="/products" className="dropdown-link md:hidden"><ArrowUpRightIcon size={16}/>Products</Link>
                                             <Link to="/deals" className="dropdown-link md:hidden"><ArrowUpRightIcon size={16}/>Deals</Link>
                                             

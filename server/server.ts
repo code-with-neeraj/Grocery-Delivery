@@ -11,6 +11,9 @@ import addressRouter from "./routes/addressRoutes.js";
 import adminRouter from "./routes/adminRoutes.js";
 import deliveryPartnerRouter from "./routes/deliveryPartnerRoutes.js";
 import { stripeWebhook } from "./controllers/webhooks.js";
+import userRouter from "./routes/userRoutes.js";
+
+
 
 const app = express();
 
@@ -36,6 +39,7 @@ app.use("/api/inngest", serve({ client: inngest, functions }));
 app.use('/api/addresses',addressRouter)
 app.use('/api/admin',adminRouter)
 app.use('/api/delivery',deliveryPartnerRouter)
+app.use('/api/account', userRouter)
 
 
 
