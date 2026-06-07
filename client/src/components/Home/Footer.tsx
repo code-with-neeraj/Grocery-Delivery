@@ -35,7 +35,7 @@ const Footer = () => {
                                             {link.label}
                                         </Link>
                                     ) : (
-                                        <a href={link.href} className="text-sm text-white/70 hover:text-white">{link.label}</a>
+                                        <a href={link.to} className="text-sm text-white/70 hover:text-white">{link.label}</a>
 
                                     )}
                                 </li>
